@@ -33,7 +33,6 @@ public class WebdavTeambitionApplication {
         return servletRegistrationBean;
     }
 
-
     @Bean
     public FilterRegistrationBean disableSpringBootErrorFilter() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
@@ -41,6 +40,4 @@ public class WebdavTeambitionApplication {
         filterRegistrationBean.setEnabled(true);
         return filterRegistrationBean;
     }
-
-
 }

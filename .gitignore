@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/webdav.log
+/src/main/resources/application-pro.properties
