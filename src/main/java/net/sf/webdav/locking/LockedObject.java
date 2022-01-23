@@ -4,9 +4,9 @@ import java.util.UUID;
 
 /**
  * a helper class for ResourceLocks, represents the Locks
- * 
+ *
  * @author re
- * 
+ *
  */
 public class LockedObject {
 
@@ -53,7 +53,7 @@ public class LockedObject {
     protected String _type = null;
 
     /**
-     * @param _resourceLocks
+     * @param resLocks
      *      the resourceLocks where locks are stored
      * @param path
      *      the path to the locked object
@@ -77,7 +77,7 @@ public class LockedObject {
 
     /**
      * adds a new owner to a lock
-     * 
+     *
      * @param owner
      *      string that represents the owner
      * @return true if the owner was added, false otherwise
@@ -109,7 +109,7 @@ public class LockedObject {
 
     /**
      * tries to remove the owner from the lock
-     * 
+     *
      * @param owner
      *      string that represents the owner
      */
@@ -147,7 +147,7 @@ public class LockedObject {
 
     /**
      * adds a new child lock to this lock
-     * 
+     *
      * @param newChild
      *      new child
      */
@@ -165,7 +165,7 @@ public class LockedObject {
     /**
      * deletes this Lock object. assumes that it has no children and no owners
      * (does not check this itself)
-     * 
+     *
      */
     public void removeLockedObject() {
         if (this != _resourceLocks._root && !this.getPath().equals("/")) {
@@ -201,7 +201,7 @@ public class LockedObject {
     /**
      * deletes this Lock object. assumes that it has no children and no owners
      * (does not check this itself)
-     * 
+     *
      */
     public void removeTempLockedObject() {
         if (this != _resourceLocks._tempRoot) {
@@ -239,7 +239,7 @@ public class LockedObject {
     /**
      * checks if a lock of the given exclusivity can be placed, only considering
      * children up to "depth"
-     * 
+     *
      * @param exclusive
      *      wheather the new lock should be exclusive
      * @param depth
@@ -255,7 +255,7 @@ public class LockedObject {
 
     /**
      * helper of checkLocks(). looks if the parents are locked
-     * 
+     *
      * @param exclusive
      *      wheather the new lock should be exclusive
      * @return true if no locks at the parent path are forbidding a new lock
@@ -277,7 +277,7 @@ public class LockedObject {
 
     /**
      * helper of checkLocks(). looks if the children are locked
-     * 
+     *
      * @param exclusive
      *      wheather the new lock should be exclusive
      * @return true if no locks at the children paths are forbidding a new lock
@@ -318,7 +318,7 @@ public class LockedObject {
 
     /**
      * Sets a new timeout for the LockedObject
-     * 
+     *
      * @param timeout
      */
     public void refreshTimeout(int timeout) {
@@ -327,7 +327,7 @@ public class LockedObject {
 
     /**
      * Gets the timeout for the LockedObject
-     * 
+     *
      * @return timeout
      */
     public long getTimeoutMillis() {
@@ -336,7 +336,7 @@ public class LockedObject {
 
     /**
      * Return true if the lock has expired.
-     * 
+     *
      * @return true if timeout has passed
      */
     public boolean hasExpired() {
@@ -349,7 +349,7 @@ public class LockedObject {
 
     /**
      * Gets the LockID (locktoken) for the LockedObject
-     * 
+     *
      * @return locktoken
      */
     public String getID() {
@@ -358,7 +358,7 @@ public class LockedObject {
 
     /**
      * Gets the owners for the LockedObject
-     * 
+     *
      * @return owners
      */
     public String[] getOwner() {
@@ -367,7 +367,7 @@ public class LockedObject {
 
     /**
      * Gets the path for the LockedObject
-     * 
+     *
      * @return path
      */
     public String getPath() {
@@ -376,7 +376,7 @@ public class LockedObject {
 
     /**
      * Sets the exclusivity for the LockedObject
-     * 
+     *
      * @param exclusive
      */
     public void setExclusive(boolean exclusive) {
@@ -385,7 +385,7 @@ public class LockedObject {
 
     /**
      * Gets the exclusivity for the LockedObject
-     * 
+     *
      * @return exclusivity
      */
     public boolean isExclusive() {
@@ -394,7 +394,7 @@ public class LockedObject {
 
     /**
      * Gets the exclusivity for the LockedObject
-     * 
+     *
      * @return exclusivity
      */
     public boolean isShared() {
@@ -403,7 +403,7 @@ public class LockedObject {
 
     /**
      * Gets the type of the lock
-     * 
+     *
      * @return type
      */
     public String getType() {
@@ -412,7 +412,7 @@ public class LockedObject {
 
     /**
      * Gets the depth of the lock
-     * 
+     *
      * @return depth
      */
     public int getLockDepth() {

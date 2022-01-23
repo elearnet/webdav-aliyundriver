@@ -23,7 +23,8 @@ public class WebdavTeambitionApplication {
 
     @Bean
     public ServletRegistrationBean<WebdavServlet> myServlet(){
-        ServletRegistrationBean<WebdavServlet> servletRegistrationBean = new ServletRegistrationBean<>(new WebdavServlet(), "/*");
+        //注册webDav
+        ServletRegistrationBean<WebdavServlet> servletRegistrationBean = new ServletRegistrationBean<>(new WebdavServlet(), "/webdav/*");
         Map<String, String> inits = new LinkedHashMap<>();
         inits.put("ResourceHandlerImplementation", AliYunDriverFileSystemStore.class.getName());
 //        inits.put("ResourceHandlerImplementation", LocalFileSystemStore.class.getName());
